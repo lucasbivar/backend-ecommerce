@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 //routes
-const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
 
 // environment variable or you can say constants
@@ -22,6 +23,7 @@ mongoose.connect(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/api", userRoutes);
+app.use("/api", adminRoutes);
 
 
 app.listen(process.env.PORT, () => {
