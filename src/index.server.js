@@ -23,7 +23,7 @@ mongoose.connect(
     console.log("Database connected!")
   });
 
-  app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use("/public", express.static(path.join(__dirname, "uploads")));
 
